@@ -1,14 +1,5 @@
 <h1>編集</h1>
 
-<%= form_for(task) do |f| %>
-  <div class="field">
-    <%= f.label :content %>
-    <%= f.text_field :content %>
-  </div>
+<%= render 'form', task: @task %>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
-
-<%= link_to '詳細画面へ', @task %> |
+<%= link_to '詳細画面へ', @task %>
