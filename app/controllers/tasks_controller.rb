@@ -19,15 +19,18 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
 
     if @task.save
-      redirect_to @task, notice: 'タスクが正常に作られました。'
+      flash[:notice] = "タスクが正常に作られました。"
+      redirect_to @task
     else
+      flash.now[:danger] = "正常にタスクの作成ができませんでした"
       render :new
     end
   end
 
   def update
     if @task.update(task_params)
-      redirect_to @task, notice: '正常にタスク内容を更新しました。'
+      flash[:notice] = "正常にタスク内容を更新しました。"
+      redirect_to @task
     else
       flash.now[:danger] = "正常にタスクの更新ができませんでした"
       render :edit
