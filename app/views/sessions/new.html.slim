@@ -1,0 +1,11 @@
+.row
+  .col-xs-6.col-xs-offset-3
+    = form_for(:session, url: login_path) do |f|
+      .form-group
+        = f.label :email, 'Email'
+        = f.email_field :email, class: "form-control"
+      .form-group
+        = f.label :password, 'Password'
+        = f.password_field :password, class: "form-control"
+      
+      = f.submit "ろぐいん", class: "btn btn-block btn-info"
