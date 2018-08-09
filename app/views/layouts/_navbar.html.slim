@@ -12,5 +12,11 @@ header
           | Tasks
       #bs-example-navbar-collapse-1.collapse.navbar-collapse
         ul.nav.navbar-nav.navbar-right
-          li
-            = link_to '新規タスクの追加', new_task_path
+          - if logged_in?
+            li
+              = link_to '新規タスクの追加', new_task_path
+            li
+              = link_to 'ログアウト', sign_out_path(current_user), method: :delete
+          - else
+            li
+              = link_to 'ログイン', login_path
