@@ -1,0 +1,16 @@
+header
+  nav.navbar.navbar-inverse.navbar-static-top
+    .container
+      .navbar-header
+        button.navbar-toggle.colllapsed[type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"]
+          span.sr-only
+            | Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.navbar-brand[hraf="/"]
+          | Tasks
+      #bs-example-navbar-collapse-1.collapse.navbar-collapse
+        ul.nav.navbar-nav.navbar-right
+          li
+            = link_to '新規タスクの追加', new_task_path
