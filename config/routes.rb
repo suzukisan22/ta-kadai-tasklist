@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
-  delete 'sign_out', to: 'sessions#destory'
+  delete 'sign_out', to: 'sessions#destroy'
 
   resources :tasks
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

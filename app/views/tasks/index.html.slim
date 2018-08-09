@@ -1,10 +1,16 @@
 h1
   | タスク一覧画面
 ul
-  - @tasks.each do |task|
-    li
-      = link_to task.id, task
-      | : 
-      = task.status
-      |  > 
-      = task.content
+  - if @tasks.present?
+    - @tasks.each do |task|
+      li
+        = link_to task.id, task
+        | : 
+        = task.status
+        |  > 
+        = task.content
+        - if current_user == task.user
+          | &nbsp;
+          = link_to "Delete", task_path(task), method: :delete
+  - else
+    | タスクを登録してみましょう
